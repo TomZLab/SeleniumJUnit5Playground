@@ -34,6 +34,7 @@ public class BaseTest {
         if (testEnvironment.getHeadless()) {
             options.addArguments("headless");
         }
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
     }
 
