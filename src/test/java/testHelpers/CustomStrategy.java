@@ -8,17 +8,20 @@ import org.junit.platform.engine.support.hierarchical.ParallelExecutionConfigura
 @Slf4j
 public class CustomStrategy implements ParallelExecutionConfiguration, ParallelExecutionConfigurationStrategy {
 
-    private int getTestThreads() {
+    private int getTestThreads(boolean logInfo) {
         String property = System.getProperty("testThreads");
         if (property == null) {
-            log.info("\"testThreads\" system property is null, number of threads set to 1.");
+            if (logInfo) {
+                log.info("\"testThreads\" system property is null, number of threads set to 1.");
+            }
             return 1;
         }
         return Integer.parseInt(property);
     }
+
     @Override
     public int getParallelism() {
-        return getTestThreads();
+        return getTestThreads(true);
     }
 
     @Override
@@ -28,12 +31,12 @@ public class CustomStrategy implements ParallelExecutionConfiguration, ParallelE
 
     @Override
     public int getMaxPoolSize() {
-        return getTestThreads();
+        return getTestThreads(false);
     }
 
     @Override
     public int getCorePoolSize() {
-        return getTestThreads();
+        return getTestThreads(false);
     }
 
     @Override
