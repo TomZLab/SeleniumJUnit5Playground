@@ -12,7 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.8.1</selenium.version>
+        <selenium.version>4.28.1</selenium.version>
         <junit.version>5.9.2</junit.version>
         <allure-junit5.version>2.21.0</allure-junit5.version>
         <allure-maven.version>2.11.2</allure-maven.version>
@@ -110,16 +110,16 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
                     </argLine>
-<!--                    <systemProperties>-->
-<!--                        <property>-->
-<!--                            <name>junit.jupiter.extensions.autodetection.enabled</name>-->
-<!--                            <value>true</value>-->
-<!--                        </property>-->
-<!--                    </systemProperties>-->
-                    <systemPropertyVariables>
+                    <systemProperties>
+                        <property>
+                            <name>junit.jupiter.extensions.autodetection.enabled</name>
+                            <value>true</value>
+                        </property>
+                    </systemProperties>
+<!--                    <systemPropertyVariables>-->
 
-                            <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
-                    </systemPropertyVariables>
+<!--                            <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>-->
+<!--                    </systemPropertyVariables>-->
                 </configuration>
                 <dependencies>
                     <dependency>
