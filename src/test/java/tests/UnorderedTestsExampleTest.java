@@ -11,18 +11,18 @@ public class UnorderedTestsExampleTest extends BaseTest {
     @Test
     public void featureOneTest() {
         //Write test code here
-        log.info("unordered tests example - 1st feature test");
+        log.info("Unordered tests example - 1st feature test");
     }
 
     @Test
     public void featureTwoTest() {
         //Write test code here
-        log.info("unordered tests example - 2nd feature test");
+        log.info("Unordered tests example - 2nd feature test");
     }
 
     @Test
     public void featureThreeTest() {
         //Write test code here
-        log.info("unordered tests example - 3rd feature test");
+        log.info("Unordered tests example - 3rd feature test");
     }
 }

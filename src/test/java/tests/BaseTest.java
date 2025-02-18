@@ -2,6 +2,7 @@ package tests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,6 +17,7 @@ import java.io.File;
 
 import static testHelpers.Screenshots.addScreenshotToAllure;
 
+@Slf4j
 @SuppressWarnings({"unused", "JUnitMalformedDeclaration"})
 public class BaseTest {
 
@@ -36,6 +38,7 @@ public class BaseTest {
         }
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
+        log.info("Run 'BaseTest - mainSetup'");
     }
 
     @AfterEach
@@ -43,6 +46,7 @@ public class BaseTest {
         if (testStatus.isFailed) {
             addScreenshotToAllure(driver);
         }
+        log.info("Run 'BaseTest - afterTest'");
     }
 
     @AfterAll
@@ -50,5 +54,6 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+        log.info("Run 'BaseTest - tearDown'");
     }
 }

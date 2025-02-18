@@ -12,20 +12,20 @@ public class OrderedTestsExampleTest extends BaseTest {
     @Order(1)
     public void featureOneTest() {
         //Write test code here
-        log.info("ordered tests example - 1st feature test");
+        log.info("Ordered tests example - 1st feature test");
     }
 
     @Test
     @Order(2)
     public void featureTwoTest() {
         //Write test code here
-        log.info("ordered tests example - 2nd feature test");
+        log.info("Ordered tests example - 2nd feature test");
     }
 
     @Test
     @Order(3)
     public void featureThreeTest() {
         //Write test code here
-        log.info("ordered tests example - 3rd feature test");
+        log.info("Ordered tests example - 3rd feature test");
     }
 }
